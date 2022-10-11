@@ -33,7 +33,7 @@ class Employee:
         if self.contractType == "contract":
             phrase = phrase + f"{self.hours} hours at {self.pay}/hour."
         if self.comissionType=="fixed":
-            phrase = phrase + f"and receives a commission for {self.contNum} contract(s) at {self.contPay}/contract"
+            phrase = phrase + f"and receives a commission for {self.contNum} contract(s) at {self.contPay}/contract."
         if self.comissionType=="bonus":
             phrase = phrase + f"and receives a bonus commission of {self.bonus}."
 
