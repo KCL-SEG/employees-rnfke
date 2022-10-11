@@ -15,16 +15,16 @@ class Employee:
 
 
     def get_pay(self):
-        self.totalpay = 0
         if self.contractType == "monthly salary":
-            self.totalpay = self.pay
+            totalpay = self.pay
         if self.contractType == "contract":
-            self.totalpay = self.pay*self.hours
+            totalpay = self.pay*self.hours
         if self.comissionType=="fixed":
-            self.totalpay = self.totalpay + (self.contNum*self.contPay)
+            totalpay = totalpay + (self.contNum*self.contPay)
         if self.comissionType=="bonus":
-            self.totalpay = self.totalpay + self.bonus
-        return self.totalpay
+            totalpay = totalpay + self.bonus
+        self.totalpay = self.totalpay + totalpay
+        return totalpay
 
     def __str__(self):
         phrase = f"{self.name} works on a {self.contractType} of "
