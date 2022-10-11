@@ -23,26 +23,27 @@ class Employee:
             totalpay = totalpay + (self.contNum*self.contPay)
         if self.comissionType=="bonus":
             totalpay = totalpay + self.bonus
-        self.totalpay = self.totalpay + totalpay
+        self.totalpay = totalpay
         return totalpay
 
     def __str__(self):
         phrase = f"{self.name} works on a {self.contractType} of "
         if self.contractType == "monthly salary":
-            phrase = phrase + f"{self.pay}."
+            phrase = phrase + f"{self.pay}"
         if self.contractType == "contract":
-            phrase = phrase + f"{self.hours} hours at {self.pay}/hour."
+            phrase = phrase + f"{self.hours} hours at {self.pay}/hour"
         if self.comissionType=="fixed":
-            phrase = phrase + f"and receives a commission for {self.contNum} contract(s) at {self.contPay}/contract."
+            phrase = phrase + f"and receives a commission for {self.contNum} contract(s) at {self.contPay}/contract"
         if self.comissionType=="bonus":
-            phrase = phrase + f"and receives a bonus commission of {self.bonus}."
+            phrase = phrase + f" and receives a bonus commission of {self.bonus}"
 
-        phrase = phrase + f"  Their total pay is {self.totalpay}."
+        phrase = phrase + f".  Their total pay is {self.get_pay()}."
         return phrase
 
 
 # Billie works on a monthly  salary of 4000.  Their total pay is 4000.
 billie = Employee('Billie',"monthly salary",4000)
+
 # Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
 charlie = Employee('Charlie',"contract",25)
 charlie.hours = 100
@@ -62,3 +63,5 @@ robbie.bonus = 1500
 ariel = Employee('Ariel',"contract",30,"bonus")
 ariel.hours = 120
 ariel.bonus = 600
+
+print (str(robbie))
